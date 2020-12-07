@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CharacterControll : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeed = 5.0f;
-    [SerializeField] private float _smooth = 10.0f;
-    [SerializeField] float _jumpForce = 250;
+    [SerializeField] float _moveSpeed = 5.0f;
+    [SerializeField] float _smooth = 10.0f;
+    [SerializeField] float _jumpForce = 150.0f;
 
     Animator _animator;
     Rigidbody _rigidbody;
@@ -54,7 +54,6 @@ public class CharacterControll : MonoBehaviour
         else if (_targetDir.sqrMagnitude < 0.1)
         {
             _animator.SetBool("Run", false);
-            // Slide();
         }
     }
 
