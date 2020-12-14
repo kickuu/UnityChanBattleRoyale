@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        EnemyGenerator();
     }
 
     void Update()
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     void EnemyGenerator()
     {
-        Instantiate(enemy);
+        var rand = Random.insideUnitCircle * 5;
+        var teki = Instantiate(enemy);
+        teki.transform.position = new Vector3(rand.x, 16.0f, rand.y);
     }
 }
