@@ -5,15 +5,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
+    float interval = 5f;
+    float time = 0f;
 
     void Start()
     {
-        EnemyGenerator();
     }
 
     void Update()
     {
+        time += Time.deltaTime;
 
+        if (time > interval)
+        {
+            EnemyGenerator();
+            time = 0f;
+        }
     }
 
     void EnemyGenerator()
